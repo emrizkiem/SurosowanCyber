@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SurosowanCyber</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home_fragment">Hello home fragment</string>
+    <string name="hello_category_fragment">Hello category fragment</string>
+    <string name="category_fragment">Category Fragment</string>
+    <string name="preview_dialog">Tampilkan Dialog</string>
 </resources>
