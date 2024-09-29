@@ -20,6 +20,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.surosowancyber.R
+import com.example.surosowancyber.learn.recyclerview.RecyclerViewActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,6 +63,13 @@ class MainActivity : AppCompatActivity() {
 
         openCamera.setOnClickListener {
             checkPermission()
+        }
+
+        // Intent Explicit | Go to RecyclerView Activity
+        val goToRecyclerView: Button = findViewById(R.id.goToRecyclerView)
+        goToRecyclerView.setOnClickListener {
+            val intent = Intent(this, RecyclerViewActivity::class.java)
+            startActivity(intent)
         }
     }
 

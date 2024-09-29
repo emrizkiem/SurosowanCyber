@@ -59,6 +59,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <Button
+        android:id="@+id/goToRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Pindah RecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/goToCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <ImageView
         android:id="@+id/img_camera"
         android:layout_width="300dp"
@@ -66,7 +76,7 @@
         android:layout_marginTop="24dp"
         android:scaleType="fitXY"
         tools:src="@tools:sample/avatars"
-        app:layout_constraintTop_toBottomOf="@+id/goToCamera"
+        app:layout_constraintTop_toBottomOf="@+id/goToRecyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
