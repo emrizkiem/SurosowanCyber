@@ -4,6 +4,8 @@
     <string name="hello_category_fragment">Hello category fragment</string>
     <string name="category_fragment">Category Fragment</string>
     <string name="preview_dialog">Tampilkan Dialog</string>
+    <string name="task_completed">Task Completed</string>
+    <string name="compressing">Compressing %d %%</string>
 
     <!-- Data Name Hero -->
     <string-array name="data_name">

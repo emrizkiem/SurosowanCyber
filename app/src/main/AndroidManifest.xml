@@ -19,9 +19,12 @@
         android:theme="@style/Theme.SurosowanCyber"
         tools:targetApi="31">
         <activity
+            android:name=".learn.thread.ThreadActivity"
+            android:exported="false" />
+        <activity
             android:name=".learn.recyclerview.RecyclerViewActivity"
             android:exported="false"
-            android:theme="@style/ToolbarTheme"/>
+            android:theme="@style/ToolbarTheme" />
         <activity
             android:name=".learn.activity.VolumeCubeActivity"
             android:exported="false" />

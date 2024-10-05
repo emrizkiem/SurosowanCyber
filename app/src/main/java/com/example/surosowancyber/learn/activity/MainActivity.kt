@@ -21,6 +21,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.example.surosowancyber.R
 import com.example.surosowancyber.learn.recyclerview.RecyclerViewActivity
+import com.example.surosowancyber.learn.thread.ThreadActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -69,6 +70,13 @@ class MainActivity : AppCompatActivity() {
         val goToRecyclerView: Button = findViewById(R.id.goToRecyclerView)
         goToRecyclerView.setOnClickListener {
             val intent = Intent(this, RecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Intent Explicit | Go to Thread Activity
+        val goToThread: Button = findViewById(R.id.goToThread)
+        goToThread.setOnClickListener {
+            val intent = Intent(this, ThreadActivity::class.java)
             startActivity(intent)
         }
     }
