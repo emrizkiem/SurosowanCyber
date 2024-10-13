@@ -7,4 +7,5 @@
     <color name="accent">#F0F0F0</color>
     <color name="rating">#BA3236</color>
     <color name="text">#333333</color>
+    <color name="textGray">#B9B9B9</color>
 </resources>

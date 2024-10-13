@@ -6,6 +6,7 @@
     <string name="preview_dialog">Tampilkan Dialog</string>
     <string name="task_completed">Task Completed</string>
     <string name="compressing">Compressing %d %%</string>
+    <string name="search">Search</string>
 
     <!-- Data Name Hero -->
     <string-array name="data_name">
