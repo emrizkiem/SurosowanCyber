@@ -8,4 +8,5 @@
     <color name="rating">#BA3236</color>
     <color name="text">#333333</color>
     <color name="textGray">#B9B9B9</color>
+    <color name="gray">#DCDCDC</color>
 </resources>
