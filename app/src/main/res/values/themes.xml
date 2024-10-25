@@ -17,4 +17,8 @@
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
+    <style name="RoundedStyle">
+        <item name="cornerSize">10%</item>
+    </style>
 </resources>
