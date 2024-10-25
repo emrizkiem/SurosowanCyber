@@ -10,13 +10,13 @@ data class Movies(
 	val totalPages: Int,
 
 	@field:SerializedName("results")
-	val results: List<ResultsItem>,
+	val results: List<MoviesItem>,
 
 	@field:SerializedName("total_results")
 	val totalResults: Int
 )
 
-data class ResultsItem(
+data class MoviesItem(
 	@field:SerializedName("overview")
 	val overview: String,
 
@@ -48,7 +48,7 @@ data class ResultsItem(
 	val popularity: Any,
 
 	@field:SerializedName("vote_average")
-	val voteAverage: Any,
+	val voteAverage: Float,
 
 	@field:SerializedName("id")
 	val id: Int,
