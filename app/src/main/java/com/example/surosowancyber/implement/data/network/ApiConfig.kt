@@ -30,5 +30,6 @@ class ApiConfig {
         }
 
         const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
+        const val THUMBNAIL_URL = "https://img.youtube.com/vi/%s/hqdefault.jpg"
     }
 }

@@ -8,6 +8,8 @@
     <string name="compressing">Compressing %d %%</string>
     <string name="search">Search</string>
     <string name="recommended_movies">Recommended Movies</string>
+    <string name="video">Video</string>
+    <string name="cast">Cast</string>
 
     <!-- Data Name Hero -->
     <string-array name="data_name">
