@@ -7,7 +7,7 @@
         tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBarTheme"
         tools:targetApi="31">
+        <activity
+            android:name=".implement.features.youtube.YoutubeActivity"
+            android:exported="false" />
         <activity
             android:name=".implement.features.homedetail.HomeDetailActivity"
             android:exported="false" />
