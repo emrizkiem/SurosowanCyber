@@ -1,5 +1,6 @@
  package com.example.surosowancyber.implement.features.homedetail
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -23,6 +24,7 @@ import com.example.surosowancyber.implement.data.model.Videos
 import com.example.surosowancyber.implement.data.network.ApiConfig
 import com.example.surosowancyber.implement.features.homedetail.adapter.CastAdapter
 import com.example.surosowancyber.implement.features.homedetail.adapter.VideoAdapter
+import com.example.surosowancyber.implement.features.youtube.YoutubeActivity
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.shape.CornerFamily
@@ -99,8 +101,8 @@ import retrofit2.Response
         rvVideo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvVideo.setHasFixedSize(true)
         rvVideo.adapter = adapterVideo
-        adapterVideo.onItemClick = { key ->
-
+        adapterVideo.onItemClick = { selectedVideo ->
+            goToVideo(selectedVideo.key)
         }
     }
 
@@ -198,6 +200,12 @@ import retrofit2.Response
             .load(ApiConfig.IMAGE_BASE_URL + data.backdropPath)
             .into(imgPoster)
     }
+
+     private fun goToVideo(key: String) {
+         val intent = Intent(this, YoutubeActivity::class.java)
+         intent.putExtra(YoutubeActivity.KEY_YOUTUBE, key)
+         startActivity(intent)
+     }
 
     companion object {
         const val MOVIE_ID = "MOVIE_ID"
