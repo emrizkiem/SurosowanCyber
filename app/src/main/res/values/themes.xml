@@ -21,4 +21,8 @@
     <style name="RoundedStyle">
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="RoundedStyleCast">
+        <item name="cornerSize">14%</item>
+    </style>
 </resources>

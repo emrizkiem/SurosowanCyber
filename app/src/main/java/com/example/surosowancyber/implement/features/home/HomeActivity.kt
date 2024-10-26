@@ -1,5 +1,6 @@
 package com.example.surosowancyber.implement.features.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -15,6 +16,7 @@ import com.example.surosowancyber.implement.data.network.ApiConfig
 import com.example.surosowancyber.implement.features.home.adapter.GenreAdapter
 import com.example.surosowancyber.implement.features.home.adapter.NowPlayingAdapter
 import com.example.surosowancyber.implement.features.home.adapter.RecommendedAdapter
+import com.example.surosowancyber.implement.features.homedetail.HomeDetailActivity
 import com.example.surosowancyber.implement.utils.CenterLayoutManager
 import com.example.surosowancyber.implement.utils.CenterSnapHelper
 import retrofit2.Call
@@ -75,7 +77,7 @@ class HomeActivity : AppCompatActivity() {
         val snapHelper = CenterSnapHelper()
         snapHelper.attachToRecyclerView(rvRecommended)
         adapterRecommended.onItemClick = { selectedMovies ->
-            Toast.makeText(this, "Goto detail: ${selectedMovies.title}", Toast.LENGTH_SHORT).show()
+            goToDetail(selectedMovies.id)
         }
     }
 
@@ -85,7 +87,7 @@ class HomeActivity : AppCompatActivity() {
         rvNowPlaying.setHasFixedSize(true)
         rvNowPlaying.adapter = adapterNowPlaying
         adapterNowPlaying.onItemClick = { selectedMovies ->
-            Toast.makeText(this, "Goto detail: ${selectedMovies.title}", Toast.LENGTH_SHORT).show()
+            goToDetail(selectedMovies.id)
         }
     }
 
@@ -119,12 +121,12 @@ class HomeActivity : AppCompatActivity() {
                         adapterRecommended.setData(responseBody.results)
                     }
                 } else {
-                    Log.e("HomeActivity", "onFailure: ${response.message()}")
+                    Log.e("DATA RECOMMEND MOVIES", "onFailure: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<Movies>, t: Throwable) {
-                Log.e("HomeActivity", "onFailure: ${t.message}")
+                Log.e("DATA RECOMMEND MOVIES", "onFailure: ${t.message}")
             }
         })
     }
@@ -139,13 +141,19 @@ class HomeActivity : AppCompatActivity() {
                         adapterNowPlaying.setData(responseBody.results)
                     }
                 } else {
-                    Log.e("HomeActivity", "onFailure: ${response.message()}")
+                    Log.e("DATA NOW PLAYING", "onFailure: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<Movies>, t: Throwable) {
-                Log.e("HomeActivity", "onFailure: ${t.message}")
+                Log.e("DATA NOW PLAYING", "onFailure: ${t.message}")
             }
         })
+    }
+
+    private fun goToDetail(idMovie: Int) {
+        val intent = Intent(this, HomeDetailActivity::class.java)
+        intent.putExtra(HomeDetailActivity.MOVIE_ID, idMovie)
+        startActivity(intent)
     }
 }
