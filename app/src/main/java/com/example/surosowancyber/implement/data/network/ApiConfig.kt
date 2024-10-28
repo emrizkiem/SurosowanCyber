@@ -16,7 +16,7 @@ class ApiConfig {
                     val request = chain.request()
                     val requestBuilder = request.newBuilder()
                         .addHeader("accept", "application/json")
-                        .addHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjOWM2YjhmZTI0NDc0ODQzN2Q1M2M1MGU5NmE2NzhmMiIsIm5iZiI6MTcyODE4ODc4Ny4yMDI4ODUsInN1YiI6IjVkMTMxZTU5MGUwYTI2MzdjMmNkNmRiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.V0XVCMdqQphp-I555nAUPoB5rZDG0S1yb7_ulry58OM")
+                        .addHeader("Authorization", "")
                         .build()
                     chain.proceed(requestBuilder)
                 }
