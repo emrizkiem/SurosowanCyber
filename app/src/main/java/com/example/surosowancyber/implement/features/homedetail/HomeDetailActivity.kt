@@ -25,6 +25,7 @@ import com.example.surosowancyber.implement.data.network.ApiConfig
 import com.example.surosowancyber.implement.features.homedetail.adapter.CastAdapter
 import com.example.surosowancyber.implement.features.homedetail.adapter.VideoAdapter
 import com.example.surosowancyber.implement.features.youtube.YoutubeActivity
+import com.example.surosowancyber.implement.utils.Loading
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.shape.CornerFamily
@@ -135,9 +136,11 @@ import retrofit2.Response
     }
 
     private fun setDataVideo(movieId: Int) {
+        Loading.showLoading(this)
         val client = ApiConfig.getApiService().getVideo(movieId)
         client.enqueue(object : Callback<Videos> {
             override fun onResponse(call: Call<Videos>, response: Response<Videos>) {
+                Loading.hideLoading()
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
@@ -149,6 +152,7 @@ import retrofit2.Response
             }
 
             override fun onFailure(call: Call<Videos>, t: Throwable) {
+                Loading.hideLoading()
                 Log.e("DATA VIDEO", "onFailure: ${t.message}")
             }
 
