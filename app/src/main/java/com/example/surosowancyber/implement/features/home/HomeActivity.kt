@@ -19,6 +19,7 @@ import com.example.surosowancyber.implement.features.home.adapter.RecommendedAda
 import com.example.surosowancyber.implement.features.homedetail.HomeDetailActivity
 import com.example.surosowancyber.implement.utils.CenterLayoutManager
 import com.example.surosowancyber.implement.utils.CenterSnapHelper
+import com.example.surosowancyber.implement.utils.Loading
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -112,9 +113,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setDataRecommendMovies(idGenre: String) {
+        Loading.showLoading(this)
         val client = ApiConfig.getApiService().getMoviesByGenre(1, idGenre)
         client.enqueue(object : Callback<Movies> {
             override fun onResponse(call: Call<Movies>, response: Response<Movies>) {
+                Loading.hideLoading()
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null) {
@@ -126,6 +129,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Movies>, t: Throwable) {
+                Loading.hideLoading()
                 Log.e("DATA RECOMMEND MOVIES", "onFailure: ${t.message}")
             }
         })
